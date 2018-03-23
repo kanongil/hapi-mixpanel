@@ -1,0 +1,44 @@
+{
+  "name": "hapi-mixpanel",
+  "version": "0.0.0",
+  "description": "Track events using Mixpanel",
+  "main": "lib/index.js",
+  "scripts": {
+    "test": "lab -f -a code -t 100 -L",
+    "test-cov-html": "lab -f -a code -r html -o coverage.html"
+  },
+  "keywords": [
+    "analytics",
+    "mixpanel",
+    "hapi",
+    "plugin"
+  ],
+  "author": "Gil Pedersen <gpdev@gpost.dk>",
+  "license": "BSD-2-Clause",
+  "engines": {
+    "node": ">=8.9.0"
+  },
+  "peerDependencies": {
+    "hapi": ">=17.0.0"
+  },
+  "dependencies": {
+    "hoek": "^5.0.3",
+    "mixpanel": "^0.9.0"
+  },
+  "devDependencies": {
+    "code": "^5.2.0",
+    "hapi": "^17.2.3",
+    "lab": "^15.4.1"
+  },
+  "files": [
+    "lib/"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kanongil/hapi-mixpanel.git"
+  },
+  "bugs": {
+    "url": "https://github.com/kanongil/hapi-mixpanel/issues"
+  },
+  "homepage": "https://github.com/kanongil/hapi-mixpanel#readme"
+}
