@@ -4,8 +4,8 @@
   "description": "Track events using Mixpanel",
   "main": "lib/index.js",
   "scripts": {
-    "test": "lab -f -a code -t 100 -L",
-    "test-cov-html": "lab -f -a code -r html -o coverage.html"
+    "test": "lab -f -a @hapi/code -t 100 -L",
+    "test-cov-html": "lab -f -a @hapi/code -r html -o coverage.html"
   },
   "keywords": [
     "analytics",
@@ -19,16 +19,17 @@
     "node": ">=8.9.0"
   },
   "peerDependencies": {
-    "hapi": ">=17.0.0"
+    "@hapi/hapi": ">=17.9.0"
   },
   "dependencies": {
-    "hoek": "^5.0.3",
-    "mixpanel": "^0.9.0"
+    "@hapi/hoek": "^6.2.1",
+    "@hapi/joi": "^15.0.0",
+    "mixpanel": "^0.10.2"
   },
   "devDependencies": {
-    "code": "^5.2.0",
-    "hapi": "^17.2.3",
-    "lab": "^15.4.1"
+    "@hapi/code": "^5.3.1",
+    "@hapi/hapi": "^18.3.1",
+    "@hapi/lab": "^18.1.2"
   },
   "files": [
     "lib/"

@@ -2,11 +2,11 @@
 
 // Load modules
 
-const Code = require('code');
-const Hapi = require('hapi');
+const Code = require('@hapi/code');
+const Hapi = require('@hapi/hapi');
 const HapiMixpanel = require('..');
-const Hoek = require('hoek');
-const Lab = require('lab');
+const Hoek = require('@hapi/hoek');
+const Lab = require('@hapi/lab');
 
 
 // Declare internals
@@ -58,6 +58,7 @@ describe('HapiMixpanel', () => {
 
         server.track('hi');
         server.track('hi again', null, new Date());
+        server.track('hello', null, 0);
 
         await server.stop();
 
@@ -73,7 +74,7 @@ describe('HapiMixpanel', () => {
         await server.stop();
 
         expect(errors.length).to.equal(1);
-        expect(errors[0]).to.contain({ data: 'flush failed: Error: getaddrinfo ENOTFOUND does.not.exist does.not.exist:1234' });
+        expect(errors[0].data).to.contain('flush failed: Error: getaddrinfo ENOTFOUND does.not.exist');
     });
 
     it('flushes internal queue when full', async () => {
@@ -87,7 +88,7 @@ describe('HapiMixpanel', () => {
         await Hoek.wait(200);
 
         expect(errors.length).to.equal(1);
-        expect(errors[0]).to.contain({ data: 'flush failed: Error: getaddrinfo ENOTFOUND does.not.exist does.not.exist:1234' });
+        expect(errors[0].data).to.contain('flush failed: Error: getaddrinfo ENOTFOUND does.not.exist');
 
         await server.stop();
     });
