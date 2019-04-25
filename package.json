@@ -1,6 +1,6 @@
 {
   "name": "hapi-mixpanel",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Track events using Mixpanel",
   "main": "lib/index.js",
   "scripts": {
