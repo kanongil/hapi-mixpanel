@@ -1,20 +1,11 @@
 'use strict';
 
-// Load modules
-
 const Code = require('@hapi/code');
 const Hapi = require('@hapi/hapi');
 const HapiMixpanel = require('..');
 const Hoek = require('@hapi/hoek');
 const Lab = require('@hapi/lab');
 
-
-// Declare internals
-
-const internals = {};
-
-
-// Test shortcuts
 
 const lab = exports.lab = Lab.script();
 const { describe, it } = lab;
@@ -67,7 +58,7 @@ describe('HapiMixpanel', () => {
 
     it('logs errors', async () => {
 
-        const { server, errors } = await setupServer({ apiKey: 'hello', endpoint: 'http://does.not.exist:1234' });
+        const { server, errors } = await setupServer({ apiKey: 'hello', endpoint: 'http://does.not.exist' });
 
         server.track('hi', { ok: true });
 
@@ -79,7 +70,7 @@ describe('HapiMixpanel', () => {
 
     it('flushes internal queue when full', async () => {
 
-        const { server, errors } = await setupServer({ apiKey: 'hello', endpoint: 'http://does.not.exist:1234' });
+        const { server, errors } = await setupServer({ apiKey: 'hello', endpoint: 'https://does.not.exist:1234/path' });
 
         for (let i = 0; i < 50; ++i) {
             server.track('hi');
